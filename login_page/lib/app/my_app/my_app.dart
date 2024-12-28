@@ -9,8 +9,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passController = TextEditingController();
+ final TextEditingController emailController = TextEditingController();
+final  TextEditingController passController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
@@ -27,8 +27,10 @@ class _MyAppState extends State<MyApp> {
                   children: [
                     Text(
                       "Login Page",
-                      style:
-                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue),
                     ),
                     SizedBox(
                       height: 20,
@@ -57,9 +59,10 @@ class _MyAppState extends State<MyApp> {
                                 context: context,
                                 builder: (BuildContext context) {
                                   return AlertDialog(
+                                    backgroundColor: Colors.greenAccent,
                                     title: Text('Congratulations'),
                                     content: Text('Successfull Login'),
-                                    actions: <Widget>[
+                                    actions: [
                                       TextButton(
                                         onPressed: () {
                                           Navigator.of(context)
